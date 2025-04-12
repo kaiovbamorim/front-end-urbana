@@ -1,0 +1,100 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  .sidebar {
+    width: 240px;
+    border-right: 1px solid #ddd;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: var(--cor-principal);
+  }
+
+  figure {
+    max-width: 100%;
+    text-align: center;
+    .logo-web {
+      width: 100%;
+    }
+  }
+}
+.content {
+  background-image: url(/assets/banner-web.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+::ng-deep .p-sidebar .p-sidebar-content {
+  overflow: hidden;
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+  background: transparent;
+  border-radius: 16px;
+  border: none;
+
+  &:hover {
+    background: #d77321;
+    transition: 0.2s ease;
+  }
+
+  .p-panelmenu-header-action {
+    color: #FFF;
+    padding: 1rem;
+  }
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-panel {
+  margin-bottom: 14px;
+}
+
+::ng-deep .p-menuitem-link-active {
+  background: #d77321;
+  border-radius: 16px;
+}
+
+::ng-deep .p-toolbar {
+  padding: 14px;
+  background-color: var(--cor-principal);
+  border-radius: 0;
+  figure {
+    margin: 0;
+    max-width: 300px;
+
+    img {
+      max-height: 36px;
+    }
+  }
+
+  .p-button {
+    background-color: var(--cor-principal);
+    border: none;
+
+    .p-button-icon {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+::ng-deep .p-sidebar {
+  background-color: var(--cor-principal);
+
+  .p-sidebar-icon {
+    color: #FFF;;
+  }
+}
+
+@media(min-width: 768px){
+  ::ng-deep .toolbar-mobile {
+      display: none;
+  }
+}
+
+@media(max-width: 768px){
+  ::ng-deep .sidebar-web {
+      display: none;
+  }
+}

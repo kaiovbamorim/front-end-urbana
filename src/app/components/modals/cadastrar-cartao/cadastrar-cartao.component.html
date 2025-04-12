@@ -1,0 +1,62 @@
+<p-dialog 
+  [(visible)]="visible" 
+  [style]="{ width: '700px' }" 
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [modal]="true" 
+  header="Cadastrar Cartão" 
+  [dismissableMask]="true"
+  styleClass="p-fluid"
+  (onHide)="fecharModal()">
+  
+  <ng-template pTemplate="content">
+      <div class="field">
+        <label for="name">Nome do Cartão</label>
+        <input 
+          type="text" 
+          pInputText 
+          id="name" 
+          name="name"
+          [(ngModel)]="cartaoCadastro.nome"
+          required 
+          autofocus />
+      </div>
+      <div class="field">
+        <label for="tipo">Tipo</label>
+        <p-dropdown 
+          [options]="tiposCartaoOptions"
+          [(ngModel)]="cartaoCadastro.tipo"
+          name="tipo"
+          optionLabel="name"
+          placeholder="Selecione o tipo"
+          optionLabel="name"
+          optionValue="code"
+          appendTo="body">
+        </p-dropdown>
+      </div>
+    <div class="field">
+      <label for="tipo">Status</label>
+      <p-dropdown 
+        [options]="statusCartaoOptions"
+        [(ngModel)]="cartaoCadastro.status"
+        name="tipo"
+        optionLabel="name"
+        placeholder="Selecione o status"
+        optionLabel="name"
+        optionValue="code"
+        appendTo="body">
+      </p-dropdown>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-button 
+      label="Cancelar" 
+      icon="pi pi-times" 
+      (click)="fecharModal()"
+      [text]="true" />
+    <p-button
+      label="Cadastrar" 
+      icon="pi pi-check" 
+      (click)="cadastrarCartao(cartaoCadastro)" />
+  </ng-template>
+</p-dialog>
+<p-toast/>

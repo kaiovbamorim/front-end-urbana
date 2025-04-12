@@ -1,0 +1,26 @@
+<main>
+    <figure>
+        <img src="../../assets/images/logo-vem-branca.svg"/>
+    </figure>
+    <section class="section-login">
+        <div class="container">
+            <h1>Login</h1>
+            <div class="container-inputs">
+                <div class="field">
+                    <label for="name">E-mail</label>
+                    <input [(ngModel)]="login.email" type="text" pInputText />
+                </div>
+                <div class="field">
+                    <label for="senha">Senha</label>
+                    <p-password id="senha" [feedback]="false" [showClear]="true" [toggleMask]="true" [(ngModel)]="login.senha"/>
+                </div>
+            </div>
+            <p-button 
+                label="Login" 
+                icon="pi pi-sign-in" 
+                [loading]="loading" 
+                (onClick)="Login(login)" />
+            </div>
+    </section>
+</main>
+<p-toast/>

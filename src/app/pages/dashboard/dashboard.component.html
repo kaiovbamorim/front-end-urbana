@@ -1,0 +1,27 @@
+<p-toolbar class="toolbar-mobile">
+  <div class="p-toolbar-group-start">
+    <button *ngIf="true" type="button" pButton icon="pi pi-bars" (click)="sidebarVisible = true"></button>
+  </div>
+  <div class="p-toolbar-group-center">
+  </div>
+  <div class="p-toolbar-group-end">
+    <figure>
+      <img class="logo-web" src="/assets/images/logo-vem-branca.svg" alt="Logo Vem">
+    </figure>
+  </div>
+</p-toolbar>
+
+<p-sidebar [(visible)]="sidebarVisible" position="left" [baseZIndex]="10000">
+  <p-panelMenu [model]="items" styleClass="w-full h-full"></p-panelMenu>
+</p-sidebar>
+<div class="layout">
+  <div class="sidebar sidebar-web">
+    <figure>
+      <img class="logo-web" src="/assets/images/logo-vem-branca.svg" alt="Logo Vem">
+    </figure>
+    <p-panelMenu [model]="items" styleClass="w-full h-full"></p-panelMenu>
+  </div>
+  <div class="content p-0">
+    <router-outlet></router-outlet>
+  </div>
+</div>

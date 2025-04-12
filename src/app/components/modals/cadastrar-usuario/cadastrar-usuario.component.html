@@ -1,0 +1,49 @@
+<p-dialog 
+    [(visible)]="visible" 
+    [style]="{ width: '700px' }" 
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+    [modal]="true"
+    [dismissableMask]="true"
+    header="Cadastrar Usuário" 
+    styleClass="p-fluid"
+    (onHide)="fecharModal()">
+    
+    <ng-template pTemplate="content">
+        <div class="field">
+            <label for="name">Nome</label>
+            <input 
+                type="text" 
+                pInputText 
+                id="name" 
+                [(ngModel)]="usuarioCadastro.nome"
+                required 
+                autofocus />
+        </div>
+        <div class="field">
+            <label for="email">Email</label>
+            <input 
+                type="text" 
+                pInputText 
+                id="email" 
+                [(ngModel)]="usuarioCadastro.email"
+                required />
+        </div>
+        <div class="field">
+            <label for="senha">Senha</label>
+            <p-password id="senha" [feedback]="false" [showClear]="true" [toggleMask]="true" [(ngModel)]="usuarioCadastro.senha"/>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <p-button 
+            label="Cancelar" 
+            icon="pi pi-times" 
+            (click)="fecharModal()"
+            [text]="true"  />
+        <p-button
+            label="Cadastrar" 
+            icon="pi pi-check"
+            (click)="cadastrarUsuario(usuarioCadastro)"/>
+    </ng-template>
+</p-dialog>
+<p-toast/>

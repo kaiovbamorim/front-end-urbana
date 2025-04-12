@@ -1,0 +1,130 @@
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(/assets/banner-web.png);
+    background-size: cover;
+    background-color: #f67f1d;
+    padding: 0 40px;
+
+    figure {
+        display: flex;
+        background: #3b82f6;
+        height: 768px;
+        margin: 0;
+        flex-direction: column;
+        margin-right: -35px;
+        padding: 70px;
+        border-radius: 40px 0 0 40px;
+        justify-content: center;
+
+        img {
+            margin-right: 36px;
+        }
+    }
+
+    .section-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px;
+        width: 100%;
+        max-width: 600px;
+        background: #FFF;
+        border-radius: 40px;
+        height: 768px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+                font-size: 2.5rem;
+                margin: 0;
+                margin-bottom: 40px;
+            }
+
+            .container-inputs {
+                margin-bottom: 40px;
+
+                ::ng-deep .p-inputtext {
+                    height: 54px;
+                }
+
+                .field {
+                    display: flex;
+                    margin-bottom: 20px;
+                    flex-direction: column;
+
+                    label {
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+
+            ::ng-deep .p-button {
+                height: 54px;
+                text-align: right;
+                width: 100%;
+            }
+
+            ::ng-deep .p-password {
+                width: 100%;
+
+                .p-inputtext {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+
+        figure {
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            max-width: 600px;
+            height: 250px;
+            padding: 50px;
+            border-radius: 40px 40px 0 0;
+            margin-bottom: -40px;
+
+            img {
+                max-width: 50%;
+                margin: 0;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    
+    .section-login {
+        padding: 40px !important;
+    }
+
+}
+
+@media(max-width: 500px){
+    main {
+        padding: 0;
+        height: auto;
+
+        figure {
+            border-radius: 0;
+            height: 210px;
+        }
+
+        .section-login {
+            border-radius: 40px 40px 0 0;
+            height: calc(100vh - 210px);
+        }
+    }
+}

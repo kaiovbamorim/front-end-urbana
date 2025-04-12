@@ -1,0 +1,34 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+interface DadosLogin {
+  nome: string;
+  senha: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private baseUrl = 'http://localhost:8080/auth';
+  constructor(private http: HttpClient) { }
+
+    login(dadosLogin: DadosLogin): Observable<any> {
+      return this.http.post(`${this.baseUrl}/usuario`, dadosLogin);
+    }
+
+    getToken(){
+      return localStorage.getItem('token');
+    }
+
+    getUsuario(){
+      return localStorage.getItem('usuario');
+    }
+
+    logout(){
+      localStorage.removeItem('token');
+      localStorage.removeItem('usuario');
+    }
+
+}
