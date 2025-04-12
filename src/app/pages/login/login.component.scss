@@ -6,12 +6,12 @@ main {
     justify-content: center;
     background: url(/assets/banner-web.png);
     background-size: cover;
-    background-color: #f67f1d;
+    background-color: #f8f8f8;
     padding: 0 40px;
 
     figure {
         display: flex;
-        background: #3b82f6;
+        background: var(--cor-principal);
         height: 768px;
         margin: 0;
         flex-direction: column;
@@ -70,6 +70,8 @@ main {
                 height: 54px;
                 text-align: right;
                 width: 100%;
+                background-color: var(--cor-principal);
+                border: 1px solid var(--cor-principal);
             }
 
             ::ng-deep .p-password {
