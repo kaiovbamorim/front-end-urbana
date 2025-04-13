@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 interface DadosUsuario {
   nome: string;
   email: string;
+  tipo: string;
   senha: string;
 }
 

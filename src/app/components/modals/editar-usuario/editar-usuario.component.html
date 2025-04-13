@@ -28,6 +28,19 @@
                 required />
         </div>
         <div class="field">
+            <label for="tipo">Tipo</label>
+            <p-dropdown 
+              [options]="tipoUsuarioOptions"
+              [(ngModel)]="usuarioSelecionado.tipo"
+              name="tipo"
+              optionLabel="name"
+              placeholder="Selecione o tipo"
+              optionLabel="name"
+              optionValue="code"
+              appendTo="body">
+            </p-dropdown>
+          </div>
+        <div class="field">
             <label for="senha">Nova Senha</label>
             <p-password id="senha" [feedback]="false" [showClear]="true" [toggleMask]="true" [(ngModel)]="usuarioSelecionado.senha"/>
         </div>
