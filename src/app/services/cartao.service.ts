@@ -23,6 +23,10 @@ export class CartaoService {
     return this.http.get<any[]>(`${this.baseUrl}/todos-cartoes`);
   }
 
+  getCartoesUsuario(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/meus-cartoes`);
+  }
+
   excluirCartao(id: String): Observable<any> {
     return this.http.delete(`${this.baseUrl}/excluir/${id}`);
   }

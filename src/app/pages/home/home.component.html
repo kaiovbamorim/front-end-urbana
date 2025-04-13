@@ -1,1 +1,44 @@
-<p>home works!</p>
+<section class="container-table">
+    <div class="content">
+        <header>
+            <div class="title-table">
+                <i class="pi pi-credit-card"></i>
+                <div>
+                    <h1>Meus Cartões</h1>
+                    <p>Esta página permite visualização dos seus cartões registrados no sistema, incluindo suas informações.</p>
+                </div>
+            </div>
+        </header>
+
+        <swiper *ngIf="cartoes.length > 0"
+            [slidesPerView]="2"
+            [spaceBetween]="20"
+            [breakpoints]="{
+                '0': { slidesPerView: 1 }, 
+                '1000': { slidesPerView: 1 }, 
+                '1001': { slidesPerView: 2 }
+              }"
+            >
+            <!-- (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()" -->
+            <ng-template swiperSlide *ngFor="let cartao of cartoes">
+                <div class="container-card">
+                    <div class="nome-card">
+                        <img src="./assets/images/logo-vem-branca.svg"/>
+                        <p>{{ cartao.tipo }}</p>
+                        <p-tag [value]="cartao.status ? 'ATIVO' : 'INATIVO'" [severity]="getStatus(cartao.status)" />
+                    </div>
+                    <div class="num-card">
+                        <p class="nome">{{ cartao.nome }}</p>
+                        <p class="numero">{{ cartao.numero }}</p>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+
+        <div *ngIf="cartoes.length === 0" class="sem-conteudo">
+            <i class="pi pi-exclamation-triangle"></i>
+            <h2>Você não possui cartões cadastrados em sistema!</h2>
+        </div>
+    </div>
+</section>

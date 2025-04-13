@@ -1,0 +1,63 @@
+.container-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--cor-principal);
+    border-radius: 16px;
+    height: 280px;
+
+    p { 
+        margin: 0;
+        color: #FFF;
+    }
+    .nome-card {
+        position: relative;
+        img {
+            max-width: 120px;
+        }
+        p {
+            font-family: "Inter var", sans-serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+
+        p::first-letter {
+            text-transform: capitalize;
+        }
+    }
+
+    .num-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nome {
+            font-size: 1.5rem;
+        }
+
+        .numero {
+            font-size: 1.5rem;
+        }
+    }
+
+    ::ng-deep .p-tag {
+        position: absolute;
+        top: 0;
+        right: 0;
+        span {
+            font-size: 1rem;
+        }
+    }
+
+    @media(max-width: 1000px) {
+        height: 310px;        
+    }
+    
+    @media(max-width: 500px) {
+        height: 250px;        
+    }
+}
+
+
