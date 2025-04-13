@@ -1,3 +1,7 @@
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -82,3 +86,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         color: var(--cor-principal);
     }
 }
+
+.p-tag.p-tag-success {
+    background-color: #b4ff9f;
+    color: #00a43d;
+}
+
+.p-tag.p-tag-danger {
+    background-color: #ffb8b8;
+    color: #ef4444;
+}
+
