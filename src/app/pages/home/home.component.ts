@@ -4,6 +4,7 @@ import { SwiperModule } from 'swiper/angular';
 import { CartaoService } from 'src/app/services/cartao.service';
 import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
 import { CommonModule } from '@angular/common';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 
 SwiperCore.use([Navigation, Pagination, Scrollbar]);
@@ -17,10 +18,17 @@ SwiperCore.use([Navigation, Pagination, Scrollbar]);
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private cartaoService: CartaoService){}
-
+  constructor(private cartaoService: CartaoService, private authService: AuthService){}
+  nomeUsuario: any;
   cartoes: any[] = [];
   ngOnInit() {
+
+    const usuarioString = this.authService.getUsuario();
+    if(usuarioString) {
+      const usuario = JSON.parse(usuarioString);
+      this.nomeUsuario = usuario.nome;
+    }
+
    this.cartaoService.getCartoesUsuario().subscribe((data) => {
      this.cartoes = data;
    })

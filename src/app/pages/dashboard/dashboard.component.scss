@@ -8,6 +8,12 @@
     padding: 1rem;
     box-sizing: border-box;
     background: var(--cor-principal);
+    position: relative;
+
+    .card-user {
+      margin-bottom: 40px;
+    }
+
   }
 
   figure {
@@ -96,5 +102,38 @@
 @media(max-width: 768px){
   ::ng-deep .sidebar-web {
       display: none;
+  }
+}
+
+.card-user {
+  width: 201px;
+  bottom: 0;
+  position: absolute;
+
+  .perfil-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    font-family: "Inter var", sans-serif;
+      .foto {
+        min-width: 50px;
+        background: #FFF;
+        border-radius: 50%;
+        text-align: center;
+        min-height: 50px;
+        line-height: 50px;
+        span {
+          color: var(--cor-principal);
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+      }
+
+      .name {
+        color: #FFF;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
   }
 }

@@ -11,10 +11,18 @@ export class DashboardComponent {
   items: MenuItem[] = [];
   sidebarVisible: boolean = false;
   mobile: boolean = false;
-
+  nomeUsuario: any;
+  primeiraLetraNome: any;
   constructor(private router: Router, private authService: AuthService) {}
   
   ngOnInit() {
+
+    const usuarioString = this.authService.getUsuario();
+    if(usuarioString) {
+      const usuario = JSON.parse(usuarioString);
+      this.nomeUsuario = usuario.nome;
+      this.primeiraLetraNome = this.nomeUsuario.charAt(0);
+    }
 
     this.items.push(
       {

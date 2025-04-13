@@ -13,13 +13,29 @@
 
 <p-sidebar [(visible)]="sidebarVisible" position="left" [baseZIndex]="10000">
   <p-panelMenu [model]="items" styleClass="w-full h-full"></p-panelMenu>
+  <div class="card-user">
+    <div class="perfil-name">
+      <div class="foto">
+        <span>{{ primeiraLetraNome }}</span>
+      </div>
+      <p class="name">{{ nomeUsuario }}</p>
+    </div>
+  </div>
 </p-sidebar>
 <div class="layout">
   <div class="sidebar sidebar-web">
     <figure>
       <img class="logo-web" src="/assets/images/logo-vem-branca.svg" alt="Logo Vem">
     </figure>
-    <p-panelMenu [model]="items" styleClass="w-full h-full"></p-panelMenu>
+    <p-panelMenu class="container-menu" [model]="items" styleClass="w-full h-full"></p-panelMenu>
+    <div class="card-user">
+      <div class="perfil-name">
+        <div class="foto">
+          <span>{{ primeiraLetraNome }}</span>
+        </div>
+        <p class="name">{{ nomeUsuario }}</p>
+      </div>
+    </div>
   </div>
   <div class="content p-0">
     <router-outlet></router-outlet>
