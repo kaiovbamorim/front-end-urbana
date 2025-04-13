@@ -31,7 +31,7 @@ usuarioCadastro: any = {};
           localStorage.setItem('usuario', JSON.stringify(res.usuario));
 
           this.loading = false
-          this.router.navigate(['/dashboard/usuarios']);
+          this.router.navigate(['/dashboard/home']);
         },
         error: (err) => {
           if (err.error) {

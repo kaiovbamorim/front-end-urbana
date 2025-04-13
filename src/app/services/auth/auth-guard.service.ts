@@ -17,10 +17,19 @@ export class AuthGuardService implements CanActivate {
     const user = this.authService.getUsuario();
 
     if (token !== null && user !== null) {
-      return true;
+      if(next.data['ADMIN'] === true && JSON.parse(user).tipo == "ADMIN"){
+        return true
+      } else if(!next.data['ADMIN']){
+        return true;
+      } else {
+        this.router.navigate(['/login']);
+        return false;
+      }
     } else {
       this.router.navigate(['/login']);
       return false;
     }
+    
   }
+  
 }

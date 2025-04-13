@@ -16,17 +16,32 @@ export class DashboardComponent {
   
   ngOnInit() {
 
-    this.items = [
+    this.items.push(
       {
-        label: 'Usuários',
-        icon: 'pi pi-users',
-        routerLink: ['/dashboard/usuarios'],
+        label: 'Home',
+        icon: 'pi pi-home',
+        command:  () => {
+          this.router.navigate(['/dashboard/home']);
+        },
       },
-      {
-        label: 'Cartões',
-        icon: 'pi pi-credit-card',
-        routerLink: ['/dashboard/cartoes'],
-      },
+    );  
+
+    if(this.authService.isAdmin()){
+      this.items.push(
+        {
+          label: 'Usuários',
+          icon: 'pi pi-users',
+          routerLink: ['/dashboard/usuarios'],
+        },
+        {
+          label: 'Cartões',
+          icon: 'pi pi-credit-card',
+          routerLink: ['/dashboard/cartoes'],
+        }
+      )
+    }
+
+    this.items.push(
       {
         label: 'Logout',
         icon: 'pi pi-sign-out',
@@ -35,8 +50,8 @@ export class DashboardComponent {
           this.router.navigate(['/login']);
         },
       }
-    ];
-    
+    )
+
   }
-  
+
 }

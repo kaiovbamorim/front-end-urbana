@@ -27,8 +27,18 @@ export class AuthService {
     }
 
     logout(){
-      localStorage.removeItem('token');
-      localStorage.removeItem('usuario');
+      localStorage.clear();
+    }
+
+    isAdmin(){
+      const usuarioString = this.getUsuario();
+      if(usuarioString){
+        const usuarioJson = JSON.parse(usuarioString);
+          if(usuarioJson.tipo == "ADMIN"){
+            return true;
+          }
+      }
+      return false;
     }
 
 }
