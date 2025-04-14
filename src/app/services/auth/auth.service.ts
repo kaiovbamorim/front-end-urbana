@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
 
 interface DadosLogin {
   nome: string;
@@ -11,7 +13,7 @@ interface DadosLogin {
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8080/auth';
+  private baseUrl = `${environment.api}/auth`;
   constructor(private http: HttpClient) { }
 
     login(dadosLogin: DadosLogin): Observable<any> {

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+
 
 interface DadosUsuario {
   nome: string;
@@ -13,7 +15,7 @@ interface DadosUsuario {
   providedIn: 'root'
 })
 export class UsuarioService {
-  private baseUrl = 'http://localhost:8080/usuario';
+  private baseUrl = `${environment.api}/usuario`;
 
   constructor(private http: HttpClient) { }
 
