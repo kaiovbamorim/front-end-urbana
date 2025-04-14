@@ -25,14 +25,11 @@
                 <ng-template pTemplate="body" let-usuario>
                     <tr>
                         <td>
-                            <p-toast />
-                            <p-confirmPopup>
-                                <ng-template pTemplate="content" let-message>
-                                    <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
-                                        <i [class]="message.icon" class="text-6xl text-primary-500"></i>
-                                    </div>
-                                </ng-template>
-                            </p-confirmPopup>
+                            <ng-template pTemplate="content" let-message>
+                                <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
+                                    <i [class]="message.icon" class="text-6xl text-primary-500"></i>
+                                </div>
+                            </ng-template>
                             <button 
                                 type="button" 
                                 pButton 
@@ -50,14 +47,11 @@
                         <td>{{ usuario.email }}</td>
                         <td>{{ usuario.tipo == "ADMIN" ? "ADMINISTRADOR" : "COMUM" }}</td>
                         <td>
-                            <p-toast />
-                            <p-confirmPopup>
-                                <ng-template pTemplate="content" let-message>
-                                    <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
-                                        <i [class]="message.icon" class="text-6xl text-primary-500"></i>
-                                    </div>
-                                </ng-template>
-                            </p-confirmPopup>
+                            <ng-template pTemplate="content" let-message>
+                                <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
+                                    <i [class]="message.icon" class="text-6xl text-primary-500"></i>
+                                </div>
+                            </ng-template>
                             <button 
                                 type="button" 
                                 pButton 
@@ -72,14 +66,11 @@
                             </button>
                         </td>
                         <td>
-                            <p-toast />
-                            <p-confirmPopup>
-                                <ng-template pTemplate="content" let-message>
-                                    <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
-                                        <i [class]="message.icon" class="text-6xl text-primary-500"></i>
-                                    </div>
-                                </ng-template>
-                            </p-confirmPopup>
+                            <ng-template pTemplate="content" let-message>
+                                <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
+                                    <i [class]="message.icon" class="text-6xl text-primary-500"></i>
+                                </div>
+                            </ng-template>
                             <button 
                             type="button" 
                             pButton 
@@ -123,3 +114,6 @@
 (usuarioCadastrado)="returnModalCadastroUsuario($event)"
 (fechar)="modalCadastrarUsuario = false">
 </app-cadastrar-usuario>
+
+<p-toast />
+<p-confirmPopup>
